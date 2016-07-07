@@ -92,6 +92,10 @@
     <Compile Include="Entry3.designer.cs">
       <DependentUpon>Entry3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entry4.cs" />
+    <Compile Include="Entry4.designer.cs">
+      <DependentUpon>Entry4.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
@@ -99,6 +103,7 @@
     <InterfaceDefinition Include="Entry.xib" />
     <InterfaceDefinition Include="EntryCell.xib" />
     <InterfaceDefinition Include="Entry3.xib" />
+    <InterfaceDefinition Include="Entry4.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

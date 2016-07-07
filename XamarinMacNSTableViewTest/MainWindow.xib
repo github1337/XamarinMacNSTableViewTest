@@ -53,7 +53,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <subviews>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="SWV-CP-hbe">
-                                                            <rect key="frame" x="32" y="188" width="44" height="17"/>
+                                                            <rect key="frame" x="7" y="213" width="44" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Entry2" id="TwD-7c-41B">
                                                                 <font key="font" metaFont="system"/>

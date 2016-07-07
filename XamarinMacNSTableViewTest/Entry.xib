@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Phv-uj-HUf">
-                    <rect key="frame" x="18" y="218" width="36" height="17"/>
+                    <rect key="frame" x="10" y="226" width="36" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Entry" id="zoJ-AA-ZdU">
                         <font key="font" metaFont="system"/>

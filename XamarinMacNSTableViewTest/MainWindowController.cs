@@ -43,21 +43,16 @@ namespace XamarinMacNSTableViewTest
 			tableView.RegisterNib(new NSNib("Entry3", NSBundle.MainBundle), "Entry3");
 		}
 
-
-		/*public nint GetRowCount(NSTableView tableView)
-		{
-			return 10;
-		}
-
-		public NSView GetViewForItem(NSTableView tableView, NSTableColumn tableColumn, nint row)
-		{
-			return tableView.MakeView("Entry", this);
-		}*/
-
 		[Export("numberOfRowsInTableView:")]
 		public nint GetRowCount(NSTableView tableView)
 		{
-			return 4;
+			return 5;
+		}
+
+		[Export("tableView:heightOfRow:")]
+		public nfloat GetRowHeight(NSTableView tableView, nint row)
+		{
+			return 50;
 		}
 
 		[Export("tableView:viewForTableColumn:row:")]
@@ -76,7 +71,12 @@ namespace XamarinMacNSTableViewTest
 					break;
 				case 3:
 					v = tableView.MakeView("Entry3", null);
-					//(v as Entry3).testLabel.StringValue = "alda";
+					break;
+				case 4:
+					v = tableView.MakeView("Entry4", null);
+					if (v == null) {
+						v = GetViewFromNib<Entry4>("Entry4");
+					}
 					break;
 			}
 
@@ -84,5 +84,32 @@ namespace XamarinMacNSTableViewTest
 		}
 
 
+
+
+		public static T GetViewFromNib<T>(string name) where T : NSObject
+		{
+			T view = null;
+			var arr = new NSArray();
+			bool viewWasFound = false;
+			NSBundle.MainBundle.LoadNibNamed(name, null, out arr);
+			for (nuint i = 0; i < arr.Count; i++)
+			{
+				var vv = arr.ValueAt(i);
+				var v = ObjCRuntime.Runtime.GetNSObject<NSObject>(vv);
+				if (v is T)
+				{
+					view = v as T;
+					viewWasFound = true;
+					break;
+				}
+			}
+
+			if (!viewWasFound)
+			{
+				throw new Exception("View with this nib name was not found");
+			}
+			return view;
+		}
 	}
+
 }
